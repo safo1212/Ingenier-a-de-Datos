@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine, inspect, text
 from datetime import date
 import yaml
-from etl import E as extract, T as transform, L as load
+from etl import E as extract, Load as load, Transform as transform
 
 def hay_datos_nuevos(conne):
     try:
@@ -20,13 +20,12 @@ def hay_datos_nuevos(conne):
         return True
 
 def main():
-    # Leer config
+    # Leer config para conectar las bases de salida y llegada
     with open('config.yml', 'r') as f:
         config = yaml.safe_load(f)
         config_co = config['CO_SA']
         config_etl = config['ETL_PRO']
 
-    # Crear motores
     url_co = f"{config_co['drivername']}://{config_co['user']}:{config_co['password']}@{config_co['host']}:{config_co['port']}/{config_co['dbname']}"
     url_etl = f"{config_etl['drivername']}://{config_etl['user']}:{config_etl['password']}@{config_etl['host']}:{config_etl['port']}/{config_etl['dbname']}"
 
@@ -45,7 +44,7 @@ def main():
             "fecha", "hora"
         ]
 
-        # Diccionario para transformaciones especiales
+        # Diccionario para transformaciones
         transformaciones_especiales = {
             "mensajero": transform.transform_mensajero,
             "fecha": transform.transform_fecha,

@@ -18,7 +18,7 @@ def extract(target: str, con: Engine) -> pd.DataFrame:
         return pd.read_sql_table('clientes_usuarioaquitoy', con)
 
     elif target == "mensajero":
-        # Unir con auth_user para obtener el nombre del mensajero
+        # Unión con auth_user para obtener el nombre del mensajero
         query = """
             SELECT m.*, u.username AS nombre_mensajero
             FROM clientes_mensajeroaquitoy m
