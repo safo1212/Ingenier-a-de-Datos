@@ -8,12 +8,13 @@ Este proyecto desarrolla un proceso ETL (Extracción, Transformación y Carga) q
 
 ---
 
-**Desarrollado por:**  
+**Desarrollado por:**
 
-2400452 - Jennifer Benavides Castillo
-2400479 - Cristhian David Cruz Millán
-2400794 - Sergio Alejandro Fierro Ospitia
-2400478 - Edwin Andrés Lasso Rosero
+- 2400452 - Jennifer Benavides Castillo  
+- 2400479 - Cristhian David Cruz Millán  
+- 2400794 - Sergio Alejandro Fierro Ospitia  
+- 2400478 - Edwin Andrés Lasso Rosero
+
 ```
  
 
