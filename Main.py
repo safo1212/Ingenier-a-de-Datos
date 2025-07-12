@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine, inspect, text
 from datetime import date
 import yaml
-from etl import E as extract, Load as load, Transform as transform
+from etl import Extract as extract, Load as load, Transform as transform
 
 def hay_datos_nuevos(conne):
     try:
