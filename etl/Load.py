@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy.engine import Engine
 from sqlalchemy import inspect, text
 
-def load(df: pd.DataFrame, connection: Engine, table_name: str, replace: bool = False) -> None:
+def load(df: pd.DataFrame, connection: Engine, table_name: str, replace: bool = True) -> None:
     """
     Carga un DataFrame a una tabla en PostgreSQL.
 
